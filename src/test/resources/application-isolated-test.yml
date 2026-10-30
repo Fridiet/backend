@@ -1,0 +1,39 @@
+# Test-only placeholders. Never load personal application.yml or real external services.
+spring:
+  mail:
+    host: localhost
+    port: 1
+  data:
+    redis:
+      host: localhost
+      port: 1
+jwt:
+  secret: test-only-signing-secret-not-for-production-123456789
+ai:
+  base-url: http://127.0.0.1:1
+  service-token: test-only-token
+backend:
+  qr-base-url: http://localhost:8081
+frontend:
+  redirect-uri: http://localhost:8081/login
+firebase:
+  config-path: classpath:/unused-test-firebase.json
+cloud:
+  aws:
+    credentials:
+      access-key: test-only-access-key
+      secret-key: test-only-secret-key
+    region:
+      static: ap-southeast-2
+    s3:
+      bucket: test-only-bucket
+kakao:
+  client-id: test-client
+  admin-key: test-admin
+  redirect-uri: http://localhost/login/oauth2/code/kakao
+  link-redirect-uri: http://localhost/link/oauth2/code/kakao
+google:
+  client-id: test-client
+  client-secret: test-secret
+  redirect-uri: http://localhost/login/oauth2/code/google
+  link-redirect-uri: http://localhost/link/oauth2/code/google
